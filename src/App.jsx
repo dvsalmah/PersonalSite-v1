@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './components/Header';
+import Header from './components/layout/Navbar';
 import Hero from './page/Hero';
 import AboutMe from './page/AboutMe';  // Import baru
 import Skills from './page/Skills';

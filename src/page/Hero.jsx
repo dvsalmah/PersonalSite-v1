@@ -1,5 +1,5 @@
 import React from 'react';
-import profilePic from '../assets/profile-photo.webp';
+import profilePic from '/assets/profile-photo.webp';
 
 const Hero = () => {
   return (

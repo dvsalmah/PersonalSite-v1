@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header = () => {
+const Navbar = () => {
   const navItems = [
     { name: "Home", link: "#home" },
     { name: "About", link: "#about" },
@@ -10,7 +10,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-5 md:top-6 left-1/2 -translate-x-1/2 z-50 w-auto max-w-[90%] md:max-w-none">
+    <navbar className="fixed top-5 md:top-6 left-1/2 -translate-x-1/2 z-50 w-auto max-w-[90%] md:max-w-none">
       <nav className="
         flex items-center justify-center 
         gap-1 md:gap-2 
@@ -47,8 +47,8 @@ const Header = () => {
         ))}
 
       </nav>
-    </header>
+    </navbar>
   );
 };
 
-export default Header;
+export default Navbar;

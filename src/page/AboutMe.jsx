@@ -11,10 +11,10 @@ from "@/components/ui/card";
 
 const AboutMe = () => {
   const photos = [
-    {id:1, src:"src/assets/slide1.webp", alt:"Photo 1"},
-    {id:2, src:"src/assets/slide2.webp", alt:"Photo 2"},
-    {id:3, src:"src/assets/slide3.webp", alt:"Photo 3"},
-    {id:4, src:"src/assets/slide4.webp", alt:"Photo 4"},
+    {id:1, src:"/assets/slide1.webp", alt:"Photo 1"},
+    {id:2, src:"/assets/slide2.webp", alt:"Photo 2"},
+    {id:3, src:"/assets/slide3.webp", alt:"Photo 3"},
+    {id:4, src:"/assets/slide4.webp", alt:"Photo 4"},
   ]
   return (
     <section id="about" className="py-20 md:pt-8 lg:pt-12 bg-[#0F172A] relative transition-colors duration-300 overflow-hidden">
@@ -26,7 +26,7 @@ const AboutMe = () => {
         <div className="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
           <div className="flex-1 order-1 md:order-2">
             <p className="text-center md:text-left text-[#CBD5E1] text-lg leading-relaxed">
-              A second-year Computer Science student at Universitas Brawijaya with a growing interest in Product Management, alongside a strong curiosity for front-end development.
+              A second-year Computer Science student at Brawijaya University with a growing interest in Product Management, alongside a strong curiosity for front-end development.
               Experience also includes working in robotics using Python, OpenCV, and YOLO.
             </p>
           </div>
