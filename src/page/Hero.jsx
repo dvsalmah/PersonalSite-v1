@@ -20,12 +20,6 @@ const Hero = () => {
 
       <div className="absolute top-8 left-8 md:top-12 md:left-12 z-20">
         <div className="absolute -inset-4 bg-white/60 blur-2xl rounded-full -z-10"></div>
-        
-        {/* <img 
-          src="/icon.svg" 
-          alt="Logo" 
-          className="w-12 h-12 md:w-16 md:h-16 object-contain relative z-20 hover:scale-110 transition-transform duration-300"
-        /> */}
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-14 lg:px-20 py-12 md:py-16 lg:py-24 flex flex-col-reverse md:grid md:grid-cols-2 gap-12 md:gap-8 items-center">        
