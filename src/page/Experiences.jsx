@@ -44,10 +44,10 @@ const Experiences = () => {
     }
   ];
   return (
-    <section id="experiences" className="py-20 bg-[#1E293B]">
+    <section id="experiences" className="py-24 bg-[#1E293B]">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-[#F8FAFC]">Experiences</h2>
-        <p className="text-center mb-12 mt-4 text-[#CBD5E1]">A journey of growth through impactful roles</p>
+        <p className="text-center mb-8 mt-4 text-[#CBD5E1]">A journey of growth through impactful roles</p>
         <Timeline data={experiencesData}/>
       </div>
     </section>
