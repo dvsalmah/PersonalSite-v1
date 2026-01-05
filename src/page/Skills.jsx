@@ -5,7 +5,7 @@ const Skills = () => {
   const skillCategories = [
     {
       title: "Product Management",
-      badges: ["Product Thinking", "Requirement Analysis", "User Research & Problem Discovery", "Roadmapping & Prioritization", "Stakeholder Communication"]
+      badges: ["Leadership", "Product Thinking", "Requirement Analysis", "User Research", " Problem Discovery", "Roadmapping"]
     },
     {
       title: "Frontend Development",
@@ -30,7 +30,7 @@ const Skills = () => {
         </h2>
         
         <p className="text-center text-slate-400 mb-12 mt-4 max-w-2xl mx-auto">
-        Driven by product thinking, supported by technical skills.
+        Driven by product thinking, supported by technical skills
         </p>
         <div className="max-w-5xl mx-auto px-8">
             <HoverEffect items={skillCategories} />

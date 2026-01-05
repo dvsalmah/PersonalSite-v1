@@ -13,8 +13,8 @@ const Navbar = () => {
     <navbar className="fixed top-5 md:top-6 left-1/2 -translate-x-1/2 z-50 w-auto max-w-[90%] md:max-w-none">
       <nav className="
         flex items-center justify-center 
-        gap-1 md:gap-2 
-        px-2 py-2 md:px-3 md:py-2
+        gap-0 md:gap-2 
+        px-3 py-2 md:px-3 md:py-2
         rounded-full
         
         bg-slate-900/40
@@ -33,7 +33,7 @@ const Navbar = () => {
             key={index}
             href={item.link}
             className="
-              px-3 md:px-5 py-2
+              px-2 md:px-5 py-2
               text-xs md:text-sm font-medium
               text-slate-300
               transition-all duration-300
