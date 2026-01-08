@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Award, Users, Target, CheckCircle2, TrendingUp, Lightbulb, Github, ExternalLink } from 'lucide-react';
+import { ArrowLeft, Award, Users, Target, CheckCircle2, TrendingUp, Lightbulb, Github, ExternalLink, CalendarMinus2, Images } from 'lucide-react';
 import { Badge } from '../components/ui/badge';
 import { Card, CardContent } from '../components/ui/card';
 import {
@@ -20,28 +20,25 @@ const ProjectDetail = () => {
         window.scrollTo(0, 0);
     }, [projectId]);
   
-    // UNIFIED Projects Database (PM + FE)
     const projectsData = {
       // ==================== PM PROJECTS ====================
       'urjobs': {
-        type: 'pm', // ← Project type identifier
+        type: 'pm', 
         title: "UrJobs",
         tagline: "Smart Steps Towards Your Dream Career",
         category: "Career-Tech Platform",
         role: "Marketing & GTM Strategy Lead",
-        context: "Business Plan Competition - IT Fest (BPC Multimedia) | 3-person team",
-        achievement: "🥉 3rd Place Winner",
-        timeline: "3 months",
-        teamSize: "3 people (CEO, CTO, CMO)",
-        
-        bannerImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2000&auto=format&fit=crop",
+        context: "Business Plan Competition - IT Fest KBMDSI FILKOM UB | 3-person team",
+        year: "Ags 2025",
+        teamSize: "3 people",
+        bannerImage: "/assets/urjobs-1.webp",
         images: [
-            "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2000&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2000&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2000&auto=format&fit=crop",
+            "/assets/urjobs-1.webp",
+            "/assets/urjobs-2.webp",
+            "/assets/urjobs-3.webp"
         ],
         
-        overview: `UrJobs is a comprehensive career development platform designed to address Indonesia's unemployment crisis, particularly among young job seekers aged 18-45. As CMO, I led the market research, positioning strategy, and go-to-market planning that secured us 3rd place in BPC Multimedia.
+        overview: `UrJobs is a comprehensive career development web platform designed to address Indonesia's unemployment crisis, particularly among young job seekers aged 18-45. As CMO, I led the market research, positioning strategy, and go-to-market planning that secured us 3rd place in BPC IT-FEST that held by KBMDSI FILKOM UB.
 
 The Problem: As of February 2025, Indonesia faces 7.28 million unemployed individuals, with fresh graduates struggling not just to find jobs, but to prepare adequately for the competitive job market. Existing platforms focus solely on job listings without addressing career readiness.
 
@@ -52,18 +49,14 @@ Judges specifically praised our partnership strategy with universities and youth
         problem: "7.28 million unemployed individuals in Indonesia, with highest concentration in 18-35 age group. Fresh graduates lack practical career preparation skills.",
         
         approach: `As CMO, I led our market validation through:
-• Conducted surveys and interviews with 10+ fresh graduates and job seekers
+• Conducted surveys and interviews with potentials users
 • Analyzed competitor platforms (JobStreet, Kalibrr, LinkedIn, Glints) to identify gaps
-• Developed strategic positioning: "Smart steps towards your dream career"
 • Created comprehensive go-to-market strategy using AIDA framework`,
         
         myRole: [
           "Led market research and user validation (surveys + interviews)",
-          "Developed product positioning and brand messaging strategy",
           "Created go-to-market strategy with segmentation, targeting, and 4P marketing mix",
           "Designed partnership strategy with universities and youth organizations",
-          "Facilitated MoSCoW prioritization framework for feature decisions",
-          "Built risk mitigation strategies for user acquisition and conversion",
           "Contributed to financial projections and CAC modeling"
         ],
         
@@ -77,8 +70,6 @@ Judges specifically praised our partnership strategy with universities and youth
         ],
         
         impact: [
-          "🥉 Secured 3rd place in BPC Multimedia competition",
-          "Judges praised partnership strategy for rapid user acquisition",
           "Projected 5,000 users in Year 1 with 30% premium conversion",
           "IRR 45%, ROI 55%, Payback Period 2.2 years",
           "Addressed SDG 4 (Quality Education) and SDG 8 (Decent Work)",
@@ -93,12 +84,6 @@ Judges specifically praised our partnership strategy with universities and youth
             result: "Judges praised our integrated approach and clear differentiation"
           },
           {
-            title: "Balancing Vision vs. Realistic MVP",
-            problem: "Team had ambitious ideas: AI matching, VR job fairs, predictive algorithms. Limited 3-month timeline.",
-            solution: "Facilitated MoSCoW prioritization workshop. Categorized features by user value, differentiation, feasibility, and competitive gap. Three core features emerged because no competitor offered all three integrated.",
-            result: "Clear roadmap impressed judges with realistic execution plan"
-          },
-          {
             title: "Proving Financial Viability",
             problem: "How to convince judges that complex multi-sided platform can acquire users and generate revenue?",
             solution: "Built detailed CAC model, AIDA-based marketing funnel with conversion assumptions, partnership ROI projections showing university collaborations reduce CAC",
@@ -109,13 +94,9 @@ Judges specifically praised our partnership strategy with universities and youth
         learnings: [
           "Strategic market positioning is as important as product features",
           "Partnership-driven growth can significantly reduce customer acquisition costs",
-          "MoSCoW prioritization helps balance ideal vision with realistic execution",
-          "Execution credibility matters as much as idea quality in competitions",
-          "User validation should start Week 1, not Week 3"
+          "MoSCoW prioritization helps balance ideal vision with realistic execution"
         ],
-        
-        technologies: ["React", "Node.js", "PostgreSQL", "AWS", "Figma", "Notion", "Google Analytics"],
-        
+             
         metrics: {
           tam: "300M users globally",
           sam: "22M users Indonesia",
@@ -130,24 +111,17 @@ Judges specifically praised our partnership strategy with universities and youth
       'styleme': {
         type: 'pm',
         title: "StyleMe",
-        tagline: "When 'Nothing to Wear' Meets 'What to Wear Next'",
+        tagline: "When 'Nothing to Wear' meets 'What to Wear Next'",
         category: "Fashion-Tech Platform",
         role: "Strategy & Product Lead",
-        context: "Business Plan Competition - EBI Fest 2025 | 3-person team",
-        achievement: "🏆 Top 7 Finalist",
-        timeline: "12 months",
-        teamSize: "3 people (CEO, CTO, CMO)",
+        context: "Business Plan Competition - EbiFest 2025 | 3-person team",
+        year: "Oct 2025",
+        teamSize: "3 people",
         
-        bannerImage: "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2000&auto=format&fit=crop",
-        images: [
-            "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=2000&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1558769132-cb1aea3c8c7f?q=80&w=2000&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2000&auto=format&fit=crop",
-        ],
-        
-        overview: `StyleMe is Indonesia's first hybrid fashion assistant that combines AI-powered outfit recommendations with professional human stylist consultations. As CEO, I led the product vision, team coordination, and strategic decisions that earned us Top 7 Finalist position in BPC EBI Fest 2025.
+        bannerImage: "/assets/styleme-1.webp",        
+        overview: `StyleMe is hybrid fashion assistant — based on mobile-app — that combines AI-powered outfit recommendations with professional human stylist consultations. As CEO, I led the product vision, team coordination, and strategic decisions that earned us Top 7 Finalist position in BPC EBI Fest 2025.
 
-The Problem: Gen Z in Indonesia faces "decision fatigue" - standing in front of full closets feeling like they have "nothing to wear." 88% of Gen Z consider fashion important, yet 64.4% spend less than Rp 500k per shopping trip while constantly feeling stuck in style ruts.
+The Problem: Gen Z in Indonesia faces "decision fatigue" — standing in front of full closets feeling like they have "nothing to wear." 88% of Gen Z consider fashion important, yet 64.4% spend less than Rp 500k per shopping trip while constantly feeling stuck in style ruts.
 
 Our Innovation: StyleMe introduced a hybrid model combining AI efficiency (for daily outfit suggestions from digital wardrobe) with human nuance (professional stylists for important occasions). This differentiation addressed the gap we found: pure AI apps sometimes give "horrendous" recommendations, while human stylists are too expensive for daily use.
 
@@ -156,18 +130,14 @@ Market Opportunity: Indonesia's fashion e-commerce market is Rp 232 trillion, wi
         problem: "Decision fatigue from overchoice, pressure to meet social media aesthetic standards, 88% cart abandonment in fashion e-commerce due to styling uncertainty.",
         
         approach: `As CEO, I drove strategic decisions:
-• Conducted primary research with 3 users (Rheina, Asma, Devi) to validate "nothing to wear" problem
+• Conducted primary research with 3 potential users to validate "nothing to wear" problem
 • Identified competitive gap: no platform offered hybrid AI + human stylist model
-• Defined freemium strategy: AI features free, human consultation premium (Rp 30k-50k/month)
-• Positioned as solution to 88% cart abandonment through style validation`,
+• Defined freemium strategy: AI features free, human consultation premium (Rp 30k-50k/month)`,
         
         myRole: [
           "Led product vision and strategic direction as CEO",
           "Conducted primary user research validating core problem",
-          "Decided on hybrid AI + human stylist differentiation strategy",
-          "Coordinated cross-functional team (CTO handling tech, CMO handling marketing)",
           "Made key decisions on freemium vs. premium feature split",
-          "Presented pitch at BPC EBI Fest (secured Top 7 finalist)",
           "Developed financial projections (IRR 43%, ROI 25%, PBP 1.5 years)"
         ],
         
@@ -181,11 +151,10 @@ Market Opportunity: Indonesia's fashion e-commerce market is Rp 232 trillion, wi
         ],
         
         impact: [
-          "🏆 Top 7 Finalist out of hundreds of teams in BPC EBI Fest 2025",
-          "Identified unique market positioning: first hybrid AI + human in Indonesia",
+          "Identified unique market positioning: first hybrid AI + human",
           "Validated problem through primary research with real users",
           "TAM: Rp 232T Indonesian fashion e-commerce market",
-          "SAM: Rp 194T Pulau Jawa market (83.8% of TAM)",
+          "SAM: Rp 194T Java Region market (83.8% of TAM)",
           "SOM: Rp 19.4T realistic target (10% of SAM in 3 years)"
         ],
         
@@ -207,16 +176,12 @@ Market Opportunity: Indonesia's fashion e-commerce market is Rp 232 trillion, wi
         learnings: [
           "Hybrid models can differentiate in AI-dominated spaces by adding human nuance",
           "User research with just 3-5 users can provide powerful validation stories",
-          "Freemium pricing requires careful thought about what creates enough value gap to convert",
-          "Addressing market-level problems (cart abandonment) makes business case stronger",
-          "Even reaching Top 7 (not winning) provides valuable validation and learning"
+          "Freemium pricing requires careful thought about what creates enough value gap to convert"
         ],
-        
-        technologies: ["React Native", "TensorFlow", "Python", "Firebase", "Figma", "Google Cloud Vision AI"],
-        
+                
         metrics: {
           tam: "Rp 232.28T Indonesia",
-          sam: "Rp 194.68T Pulau Jawa",
+          sam: "Rp 194.68T Java Region",
           som: "Rp 19.47T (10% in 3yr)",
           year1Revenue: "Rp 101.35M",
           irr: "43%",
@@ -231,17 +196,10 @@ Market Opportunity: Indonesia's fashion e-commerce market is Rp 232 trillion, wi
         tagline: "Smart Habits for Your Brighter Financial Future",
         category: "Fintech App",
         role: "Product Manager",
-        context: "Internal Organization Competition (HackJam #14) | 3-person team",
-        achievement: "🎯 Completed MVP Prototype",
-        timeline: "Sprint-based (Agile)",
+        context: "Raion Hackjam | 3-person team",
+        year: "Sep 2025",
         teamSize: "3 people (PM, UI/UX Designer, Programmer)",
-        
-        bannerImage: "https://images.unsplash.com/photo-1579621970563-ebec7560eb3e?q=80&w=2000&auto=format&fit=crop",
-        images: [
-            "https://images.unsplash.com/photo-1579621970563-ebec7560eb3e?q=80&w=2000&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2000&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2000&auto=format&fit=crop",
-        ],
+        bannerImage: "/assets/saveup-1.webp",
         
         overview: `SaveUp is an AI-powered money management app designed to help Gen Z build healthy financial habits. As Product Manager, I led the product definition, feature prioritization, and Agile development process for this internal hackathon project.
 
@@ -261,9 +219,6 @@ This project aligned with SDG 12 (Responsible Consumption and Production), promo
         
         myRole: [
           "Defined product vision and MVP scope as Product Manager",
-          "Created user personas (Eryca - Student, Rheina - Entrepreneur)",
-          "Developed empathy maps to understand user behaviors and pain points",
-          "Facilitated Agile Scrum process with 2-week sprint cycles",
           "Wrote user stories and acceptance criteria for each feature",
           "Collaborated with UI/UX designer on wireframes and design system",
           "Coordinated with developer on technical implementation",
@@ -280,11 +235,10 @@ This project aligned with SDG 12 (Responsible Consumption and Production), promo
         ],
         
         impact: [
-          "🎯 Successfully completed MVP prototype in internal hackathon",
+          "Successfully completed 2/3 MVP prototype in 7 days during Hackjam",
           "Validated problem-solution fit through user testing with target demographic",
           "Demonstrated Agile/Scrum methodology in compressed timeline",
           "Addressed SDG 12 (Responsible Consumption) through conscious spending promotion",
-          "TAM: 749k Indonesian Gen Z users (18-25), Rp 74.9B market"
         ],
         
         challenges: [
@@ -303,15 +257,11 @@ This project aligned with SDG 12 (Responsible Consumption and Production), promo
         ],
         
         learnings: [
-          "Agile methodology forces ruthless prioritization - good constraint for product clarity",
           "User personas and empathy maps are invaluable for team alignment on 'who we're building for'",
           "Working with designer and developer taught cross-functional communication skills",
-          "Internal hackathons are great for rapid prototyping and validation before full investment",
           "Gen Z products need to feel 'effortless' - every extra tap is a barrier to adoption"
         ],
-        
-        technologies: ["React Native", "Python (OCR)", "Firebase", "Figma", "Natural Language Processing", "Chart.js"],
-        
+                
         metrics: {
           tam: "749K Gen Z (18-25)",
           sam: "55K East Java",
@@ -322,84 +272,114 @@ This project aligned with SDG 12 (Responsible Consumption and Production), promo
         }
       },
 
+      'takara': {
+        type: 'pm',
+        title: "Takara",
+        tagline: "Asisten Dapur Cerdas untuk Pengurangan Limbah Makanan",
+        category: "Food-Tech & Sustainability Platform",
+        role: "Strategy & Product Lead",
+        context: "Business Plan Competition - NBPC Pemuda Internasional 2025 | 3-person team",
+        year: "Nov 2025",
+        teamSize: "3 people",
+        bannerImage: "/assets/takara-1.webp",
+        images: [
+            "/assets/takara-1.webp",
+            "/assets/takara-2.webp",
+        ],
+        
+        overview: `Takara is smart kitchen assistant leveraging Computer Vision AI technology to address one of the world's most critical challenges: food waste."
+
+The Problem: Indonesia is the second-largest food waste contributor globally, with 80% coming from households—totaling 23-48 million tons annually, equivalent to Rp 551 trillion in economic loss (4-5% of GDP). At the household level, unmonitored refrigerators lead to nearly half of food being wasted due to forgetfulness, while meal planning burden (3-4 hours/day) triggers overbuying. Conventional digital solutions remain manual and fragmented, perpetuating the waste cycle.
+
+Our Solution: Takara uses Computer Vision AI for instant stock recognition, adaptive zero-waste recipe algorithms, and proactive expiration reminders. This transforms potential waste into real savings—up to Rp 2 million per household monthly and 30% waste reduction. Through automatic visual scanning, Takara eliminates manual inventory tracking, providing smart recipe recommendations and automatic weekly menu planning prioritizing soon-to-expire ingredients.
+
+Market Opportunity: With 70.6 million households in Indonesia and 60% of consumers interested in AI-powered meal planning, Takara addresses both economic and environmental imperatives while supporting SDG 12 (Responsible Consumption and Production).`,
+  
+  problem: "Indonesia as second-largest food waste contributor globally (23-48 million tons/year). 80% from households due to poor kitchen management, unmonitored refrigerators, and inadequate meal planning. Economic loss: Rp 551 trillion annually (4-5% GDP).",
+  
+  approach: `As product leader, I led strategic initiatives:
+• Defined value proposition: transforming waste into savings (Rp 2M/month per household, 30% reduction)
+• Designed freemium business model with three revenue streams: premium subscriptions (76%), partnerships (11%), sponsored content (13%)
+• Structured go-to-market strategy targeting urban households and young adults living independently`,
+        
+        myRole: [
+          "Defined target market segmentation (homemakers, students, young professionals)",
+          "Designed partnership strategy with e-grocery platforms and sustainability organizations",
+          "Led financial projections showing BEP at 646 users/year, payback period 20 months",
+        ],
+        
+        keyFeatures: [
+          "AI Visual Scan - Automatic ingredient recognition and expiration date prediction using Computer Vision",
+          "Smart Recipe Recommendations - Zero-waste recipes based on available ingredients nearing expiration",
+          "Automatic Weekly Menu Planning - Optimized meal plans prioritizing soon-to-expire items",
+          "Digital Kitchen Inventory - Real-time cloud-synced ingredient tracking with freshness monitoring",
+          "Proactive Expiration Alerts - Notifications for ingredients approaching expiry dates",
+        ],
+        
+        impact: [
+          "Potential household savings: Rp 2 million per month",
+          "Waste reduction target: 30% per household",
+          "Supported SDG 12 (Responsible Consumption and Production)"  
+        ],
+        
+        challenges: [
+          {
+            title: "Ensuring AI Accuracy for Food Safety",
+            problem: "Computer Vision AI must accurately recognize diverse local Indonesian ingredients and read expiration dates even from damaged/faded packaging. Incorrect predictions could cause food safety issues or user distrust.",
+            solution: "We positioned AI as 'smart assistant' rather than absolute authority, allowing manual verification. Partnered with open datasets (Kaggle, Google Open Images) for model training. Implemented continuous feedback loop where user corrections improve model accuracy. Emphasized transparency in all messaging about AI limitations.",
+            result: "Managed user expectations while building trust through 'assistant' framing and continuous improvement approach. Target accuracy: >95% detection rate with <2 second latency."
+          }
+        ],
+        
+        learnings: [
+          "Sustainability-focused products require balancing environmental mission with tangible user benefits (money savings, time efficiency)",
+          "Freemium models for impact-driven products must carefully balance accessibility (mission) with viability (business sustainability)",
+          "Computer Vision accuracy is a continuous journey—MVP with feedback loops beats delayed perfection, especially for diverse local contexts",
+        ],
+               
+        metrics: {
+          tam: "70.6M households Indonesia",
+          sam: "19.83M urban households",
+          som: "991.5K households (5% SAM)",
+          roi: "48% (5yr average)",
+          bep: "646 users/year",
+          payback: "20 months",
+          year1Revenue: "Rp 167.94M",
+          year1OpEx: "Rp 318.5M",
+          householdSavings: "Rp 2M/month potential",
+          wasteReduction: "30% target"
+        },
+
+        prototypeUrl: "https://www.figma.com/proto/sBhkzXHpNkAYUb1LP7gPkc/TIMBUL-JUARA?page-id=77%3A4&node-id=91-6&viewport=-1692%2C-844%2C0.22&t=y1fMcWrg3OyTIUNO-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=77%3A2225"
+      },
+
       // ==================== FE PROJECTS ====================
       'personalsite-v1': {
         type: 'fe',
         title: "PersonalSite-v1",
         tagline: "Modern Portfolio Crafted with Performance & Motion in Mind",
-        description: `My personal portfolio website built to showcase projects and PM case studies with a focus on performance, accessibility, and delightful user experience.
-
-Built with modern React ecosystem, featuring smooth animations powered by Framer Motion, responsive design with Tailwind CSS, and polished UI components from shadcn/ui. The site achieves 95+ Lighthouse scores across all metrics while maintaining fluid interactions.
-
-This project demonstrates my frontend development capabilities alongside PM work, showing technical execution skills that complement strategic product thinking.`,
+        overview: `My personal portfolio website built to showcase projects and PM case studies with a focus on performance, accessibility, and delightful user experience.`,
         
-        bannerImage: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2000&auto=format&fit=crop",
         images: [
-            "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2000&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2000&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?q=80&w=2000&auto=format&fit=crop",
+            "/assets/personalsite-1.webp",
+            "/assets/personalsite-2.webp",
+            "/assets/personalsite-3.webp"
         ],
         
         features: [
-          "Fully responsive design - seamless experience across mobile, tablet, and desktop",
-          "Smooth page transitions and micro-interactions powered by Framer Motion",
-          "SEO optimized with meta tags, Open Graph, and semantic HTML",
-          "Fast performance with code splitting and lazy loading (95+ Lighthouse score)",
-          "Dynamic project showcase with case study integration",
-          "Accessible UI following WCAG guidelines with keyboard navigation support"
+          "Responsive design",
+          "Dynamic project routing",
+          "Smooth animations",
+          "Project Showcase",
+          "Performance optimized"
         ],
         
-        technologies: ["React.js", "JavaScript", "Tailwind CSS", "Framer Motion", "shadcn/ui", "React Router", "Vite"],
+        technologies: ["React.js", "JavaScript", "Tailwind CSS", "Framer Motion", "Shadcn UI"],       
+        liveUrl: "https://dealovaa-site.vercel.app", 
+        repoUrl: "https://github.com/dvsalmah/PersonalSite-v1", 
         
-        highlights: [
-          "Implemented custom animation sequences for smooth, purposeful page transitions",
-          "Optimized bundle size through code splitting, reducing initial load to <100KB",
-          "Built reusable component system using shadcn/ui for consistent design language",
-          "Achieved 95+ Lighthouse scores across Performance, Accessibility, Best Practices, and SEO",
-          "Designed mobile-first responsive layouts that adapt fluidly to any screen size"
-        ],
-        
-        liveUrl: "https://your-deployed-site.vercel.app", // ← REPLACE with your actual URL
-        repoUrl: "https://github.com/yourusername/personalsite-v1", // ← REPLACE with your actual repo
-        
-        myRole: "Frontend Developer & Designer",
-        timeline: "2 months (ongoing iterations)"
-      },
-
-      'your-fe-project': {
-        type: 'fe', // ← Different type!
-        title: "Your Frontend Project",
-        tagline: "Descriptive tagline here",
-        description: "Full project description focusing on technical implementation, challenges solved, and technologies used.",
-        
-        bannerImage: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2000&auto=format&fit=crop",
-        images: [
-            "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2000&auto=format&fit=crop",
-            "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2000&auto=format&fit=crop",
-        ],
-        
-        features: [
-          "Feature 1 - Description",
-          "Feature 2 - Description",
-          "Feature 3 - Description",
-          "Feature 4 - Description"
-        ],
-        
-        technologies: ["React", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL"],
-        
-        highlights: [
-          "Technical challenge 1 and how you solved it",
-          "Performance optimization achieved",
-          "Interesting implementation detail",
-          "Key learning or innovation"
-        ],
-        
-        // FE-specific fields
-        liveUrl: "https://your-project.com",
-        repoUrl: "https://github.com/yourusername/project",
-        
-        myRole: "Full Stack Developer / Frontend Developer",
-        timeline: "2 months"
+        teamSize: "Personal Project",
+        year: "2026"
       }
     };
   
@@ -411,22 +391,24 @@ This project demonstrates my frontend development capabilities alongside PM work
           <div className="text-center">
             <h1 className="text-4xl font-bold mb-4">Project Not Found</h1>
             <p className="text-slate-400 mb-6">The project "{projectId}" doesn't exist.</p>
-            <Link to="/#projects" className="text-[#F1A7C6] hover:underline">
-              ← Back to Projects
+            <Link 
+              to="/#projects" 
+              className="inline-flex items-center gap-2 text-[#F1A7C6] hover:text-[#F1A7C6]/80 transition-colors group"
+            >
+              <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
+              <span className="hover:underline">Back to Projects</span>
             </Link>
           </div>
         </div>
       );
     }
 
-    // ==================== CONDITIONAL RENDERING ====================
-    // Render different layouts based on project type
     
     if (project.type === 'fe') {
       // FE PROJECT LAYOUT
       return (
         <section className="min-h-screen bg-[#0F172A] text-slate-100 pt-28 pb-12 lg:pt-20 px-4 md:px-10 lg:px-20">
-          <div className="max-w-4xl mx-auto space-y-8">
+          <div className="max-w-4xl md:max-w-5xl mx-auto px-5 md:px-8 space-y-8">
             
             <div>
               <Link 
@@ -437,31 +419,43 @@ This project demonstrates my frontend development capabilities alongside PM work
               </Link>
               
               <h1 className="text-4xl md:text-5xl font-bold text-[#F8FAFC] mb-2">{project.title}</h1>
-              <p className="text-xl text-slate-400">{project.tagline}</p>
-            </div>
+              <p className="text-xl text-slate-400 mb-4">{project.tagline}</p>
+              {/* Meta info */}
+              <div className="flex flex-wrap gap-4 text-sm text-slate-400">
+                <div className="flex items-center gap-2">
+                  <Users className="h-4 w-4 text-[#F1A7C6]" />
+                  <span>{project.teamSize}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CalendarMinus2 className="h-4 w-4 text-[#F1A7C6]" />
+                  <span>{project.year}</span>
+                </div>
+              </div>
+            </div>            
 
             {/* Image Carousel */}
             <div className="w-full">
                 {project.images && project.images.length > 0 ? (
-                    <Carousel className="w-full rounded-xl overflow-hidden border border-slate-800 bg-[#1E293B]">
-                        <CarouselContent>
-                            {project.images.map((img, index) => (
-                                <CarouselItem key={index}>
-                                    <div className="aspect-video w-full relative">
-                                        <img 
-                                            src={img} 
-                                            alt={`${project.title} screenshot ${index + 1}`} 
-                                            className="w-full h-full object-cover"
-                                        />
-                                    </div>
-                                </CarouselItem>
-                            ))}
-                        </CarouselContent>
-                        <CarouselPrevious className="left-4 bg-slate-900/50 hover:bg-slate-900 border-slate-700 text-[#F8FAFC]" />
-                        <CarouselNext className="right-4 bg-slate-900/50 hover:bg-slate-900 border-slate-700 text-[#F8FAFC]" />
-                    </Carousel>
+                  <Carousel className="w-full h-full rounded-xl overflow-hidden border border-slate-800 bg-[#1E293B]">
+                    <CarouselContent>
+                        {project.images.map((img, index) => (
+                            <CarouselItem key={index}>
+                                <div className="aspect-video w-full relative">
+                                    <img 
+                                        src={img} 
+                                        alt={`${project.title} visual ${index + 1}`} 
+                                        className="w-full h-full object-cover"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent" />
+                                </div>
+                            </CarouselItem>
+                        ))}
+                    </CarouselContent>
+                    <CarouselPrevious className="left-4 w-8 h-8 bg-[#F1A7C6] hover:bg-[#F1A7C6]/80 text-slate-900 border-none rounded-full" />
+                    <CarouselNext className="right-4 w-8 h-8 bg-[#F1A7C6] hover:bg-[#F1A7C6]/80 text-slate-900 border-none rounded-full" />
+                </Carousel>
                 ) : (
-                    <div className="rounded-xl overflow-hidden border border-slate-800 bg-[#1E293B] aspect-video w-full relative">
+                    <div className="rounded-xl overflow-hidden border border-slate-800 bg-[#F1A7C6] hover:bg-[#F1A7C6]/20 aspect-video w-full relative">
                         <img 
                             src={project.bannerImage} 
                             alt={project.title} 
@@ -480,9 +474,9 @@ This project demonstrates my frontend development capabilities alongside PM work
                 {/* About the Project */}
                 <Card className="bg-[#1E293B] border-slate-700">
                   <CardContent className="p-6 md:p-8">
-                    <h3 className="text-xl font-bold text-[#F8FAFC] mb-4">About the Project</h3>
+                    <h3 className="text-xl font-bold text-[#F8FAFC] mt-6 md:mt-2 lg:mt-0 mb-4">About the Project</h3>
                     <div className="text-slate-300 leading-relaxed whitespace-pre-line text-sm">
-                      {project.description}
+                      {project.overview}
                     </div>
                   </CardContent>
                 </Card>
@@ -490,7 +484,7 @@ This project demonstrates my frontend development capabilities alongside PM work
                 {/* Key Features */}
                 <Card className="bg-[#1E293B] border-slate-700">
                   <CardContent className="p-6 md:p-8">
-                    <h3 className="text-xl font-bold text-[#F8FAFC] mb-4">Key Features</h3>
+                    <h3 className="text-xl font-bold text-[#F8FAFC] mt-6 md:mt-2 lg:mt-0 mb-4">Key Features</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       {project.features.map((feature, idx) => (
                         <div key={idx} className="flex items-start gap-3">
@@ -500,24 +494,7 @@ This project demonstrates my frontend development capabilities alongside PM work
                       ))}
                     </div>
                   </CardContent>
-                </Card>
-
-                {/* Highlights */}
-                {project.highlights && (
-                  <Card className="bg-[#1E293B] border-slate-700">
-                    <CardContent className="p-6 md:p-8">
-                      <h3 className="text-xl font-bold text-[#F8FAFC] mb-4">Highlights</h3>
-                      <ul className="space-y-2">
-                        {project.highlights.map((highlight, idx) => (
-                          <li key={idx} className="flex items-start gap-3">
-                            <span className="text-[#F1A7C6] mt-1">•</span>
-                            <span className="text-slate-300 text-sm">{highlight}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
-                )}
+                </Card>            
               </div>
 
               {/* Right Column */}
@@ -525,10 +502,10 @@ This project demonstrates my frontend development capabilities alongside PM work
                 
                 {/* Technologies */}
                 <Card className="bg-[#1E293B] border-slate-700">
-                  <CardContent className="p-6">
-                    <h3 className="text-lg font-semibold text-[#F8FAFC] mb-1">Technologies</h3>
+                  <CardContent className="p-6 ">
+                    <h3 className="text-lg font-semibold text-[#F8FAFC] mt-4 mb-1">Technologies</h3>
                     <p className="text-xs text-slate-400 mb-3">Built with</p>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-1.5">
                       {project.technologies.map((tech, idx) => (
                         <Badge 
                           key={idx} 
@@ -545,7 +522,7 @@ This project demonstrates my frontend development capabilities alongside PM work
                 {/* Project Links */}
                 <Card className="bg-[#1E293B] border-slate-700">
                   <CardContent className="p-6">
-                    <h3 className="text-lg font-semibold text-[#F8FAFC] mb-3">Links</h3>
+                    <h3 className="text-lg font-semibold text-[#F8FAFC] mt-4 mb-3">Links</h3>
                     <div className="flex flex-col gap-3">
                       {project.liveUrl && (
                         <a
@@ -563,23 +540,12 @@ This project demonstrates my frontend development capabilities alongside PM work
                           href={project.repoUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-full border border-slate-600 bg-slate-800 text-slate-300 hover:bg-slate-700 hover:border-slate-500 font-medium py-2.5 px-4 rounded-lg flex items-center justify-center gap-2 transition-all duration-200 text-sm"
+                          className="w-full border border-[#F1A7C6]/30 bg-[#F1A7C6]/10 text-[#F1A7C6] hover:bg-[#F1A7C6]/20 hover:border-[#F1A7C6]/50 font-semibold py-2.5 px-4 rounded-lg flex items-center justify-center gap-2 transition-all duration-200 text-sm"
                         >
                           <Github className="h-4 w-4" /> View Source Code
                         </a>
                       )}
                     </div>
-                  </CardContent>
-                </Card>
-
-                {/* My Role */}
-                <Card className="bg-[#1E293B] border-slate-700">
-                  <CardContent className="p-6">
-                    <h3 className="text-lg font-bold text-[#F8FAFC] mb-2">My Role</h3>
-                    <p className="text-sm text-[#F1A7C6] mb-2">{project.myRole}</p>
-                    {project.timeline && (
-                      <p className="text-xs text-slate-400">Timeline: {project.timeline}</p>
-                    )}
                   </CardContent>
                 </Card>
               </div>
@@ -592,7 +558,7 @@ This project demonstrates my frontend development capabilities alongside PM work
     // ==================== PM PROJECT LAYOUT (DEFAULT) ====================
     return (
         <section className="min-h-screen bg-[#0F172A] text-slate-100 pt-28 pb-12 lg:pt-20 px-4 md:px-10 lg:px-20">
-          <div className="max-w-6xl mx-auto space-y-8">            
+          <div className="max-w-4xl md:max-w-5xl mx-auto px-5 md:px-8 space-y-8">            
             
             {/* Header */}
             <div>
@@ -603,29 +569,18 @@ This project demonstrates my frontend development capabilities alongside PM work
                 <ArrowLeft className="h-4 w-4" /> Back to Projects
               </Link>
               
-              {/* Achievement Badge */}
-              {project.achievement && (
-                <div className="inline-flex items-center gap-2 mb-3 px-3 py-1.5 bg-[#F1A7C6]/10 border border-[#F1A7C6]/30 rounded-full">
-                  <Award className="h-4 w-4 text-[#F1A7C6]" />
-                  <span className="text-sm font-medium text-[#F1A7C6]">{project.achievement}</span>
-                </div>
-              )}
-              
               <h1 className="text-4xl md:text-5xl font-bold text-[#F8FAFC] mb-2">{project.title}</h1>
               <p className="text-xl text-slate-400 mb-4">{project.tagline}</p>
               
               {/* Meta info */}
               <div className="flex flex-wrap gap-4 text-sm text-slate-400">
                 <div className="flex items-center gap-2">
-                  <Target className="h-4 w-4 text-[#F1A7C6]" />
-                  <span>{project.role}</span>
-                </div>
-                <div className="flex items-center gap-2">
                   <Users className="h-4 w-4 text-[#F1A7C6]" />
                   <span>{project.teamSize}</span>
                 </div>
-                <div>
-                  <span className="text-slate-500">•</span> {project.timeline}
+                <div className="flex items-center gap-2">
+                  <CalendarMinus2 className="h-4 w-4 text-[#F1A7C6]" />
+                  <span>{project.year}</span>
                 </div>
               </div>
             </div>
@@ -633,26 +588,26 @@ This project demonstrates my frontend development capabilities alongside PM work
             {/* Image Carousel */}
             <div className="w-full">
                 {project.images && project.images.length > 0 ? (
-                    <Carousel className="w-full rounded-xl overflow-hidden border border-slate-800 bg-[#1E293B]">
-                        <CarouselContent>
-                            {project.images.map((img, index) => (
-                                <CarouselItem key={index}>
-                                    <div className="aspect-video w-full relative">
-                                        <img 
-                                            src={img} 
-                                            alt={`${project.title} visual ${index + 1}`} 
-                                            className="w-full h-full object-cover"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent" />
-                                    </div>
-                                </CarouselItem>
-                            ))}
-                        </CarouselContent>
-                        <CarouselPrevious className="left-4 bg-slate-900/80 hover:bg-slate-900 border-slate-700 text-[#F8FAFC]" />
-                        <CarouselNext className="right-4 bg-slate-900/80 hover:bg-slate-900 border-slate-700 text-[#F8FAFC]" />
-                    </Carousel>
+                  <Carousel className="w-full h-full rounded-xl overflow-hidden border border-slate-800 bg-[#1E293B]">
+                    <CarouselContent>
+                        {project.images.map((img, index) => (
+                            <CarouselItem key={index}>
+                                <div className="aspect-video w-full relative">
+                                    <img 
+                                        src={img} 
+                                        alt={`${project.title} visual ${index + 1}`} 
+                                        className="w-full h-full object-cover"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent" />
+                                </div>
+                            </CarouselItem>
+                        ))}
+                    </CarouselContent>
+                    <CarouselPrevious className="left-4 w-8 h-8 bg-[#F1A7C6] hover:bg-[#F1A7C6]/80 text-slate-900 rounded-full" />
+                    <CarouselNext className="right-4 w-8 h-8 bg-[#F1A7C6] hover:bg-[#F1A7C6]/80 text-slate-900 rounded-full" />
+                </Carousel>
                 ) : (
-                    <div className="rounded-xl overflow-hidden border border-slate-800 bg-[#1E293B] aspect-video w-full relative">
+                    <div className="rounded-xl overflow-hidden border border-slate-800 bg-[#F1A7C6] hover:bg-[#F1A7C6]/20 aspect-video w-full relative">
                         <img 
                             src={project.bannerImage} 
                             alt={project.title} 
@@ -671,7 +626,7 @@ This project demonstrates my frontend development capabilities alongside PM work
                 {/* Context */}
                 <Card className="bg-[#1E293B] border-slate-700">
                   <CardContent className="p-6 md:p-8">
-                    <div className="flex items-start gap-3 mb-4">
+                    <div className="flex items-start gap-3 mt-6 md:mt-0 mb-4">
                       <div className="p-2 bg-[#F1A7C6]/10 rounded-lg">
                         <Target className="h-5 w-5 text-[#F1A7C6]" />
                       </div>
@@ -680,7 +635,7 @@ This project demonstrates my frontend development capabilities alongside PM work
                         <p className="text-sm text-slate-400">{project.context}</p>
                       </div>
                     </div>
-                    <p className="text-slate-300 text-sm">
+                    <p className="text-slate-300 text-sm pl-10">
                       {project.category}
                     </p>
                   </CardContent>
@@ -689,7 +644,7 @@ This project demonstrates my frontend development capabilities alongside PM work
                 {/* Overview */}
                 <Card className="bg-[#1E293B] border-slate-700">
                   <CardContent className="p-6 md:p-8">
-                    <h3 className="text-xl font-bold text-[#F8FAFC] mb-4">Project Overview</h3>
+                    <h3 className="text-xl font-bold text-[#F8FAFC] mt-6 md:mt-2 lg:mt-0 mb-4">Project Overview</h3>
                     <div className="text-slate-300 leading-relaxed whitespace-pre-line text-sm">
                       {project.overview}
                     </div>
@@ -699,7 +654,7 @@ This project demonstrates my frontend development capabilities alongside PM work
                 {/* Problem & Approach */}
                 <Card className="bg-[#1E293B] border-slate-700">
                   <CardContent className="p-6 md:p-8">
-                    <h3 className="text-xl font-bold text-[#F8FAFC] mb-4">Problem & Approach</h3>
+                    <h3 className="text-xl font-bold text-[#F8FAFC] mt-6 md:mt-2 lg:mt-0 mb-4">Problem & Approach</h3>
                     
                     <div className="mb-4">
                       <h4 className="text-sm font-semibold text-[#F1A7C6] mb-2">The Problem</h4>
@@ -718,7 +673,7 @@ This project demonstrates my frontend development capabilities alongside PM work
                 {/* Key Features */}
                 <Card className="bg-[#1E293B] border-slate-700">
                   <CardContent className="p-6 md:p-8">
-                    <h3 className="text-xl font-bold text-[#F8FAFC] mb-4">Key Features</h3>
+                    <h3 className="text-xl font-bold text-[#F8FAFC] mt-6 md:mt-2 lg:mt-0 mb-4">Key Features</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       {project.keyFeatures.map((feature, idx) => (
                         <div key={idx} className="flex items-start gap-3">
@@ -734,7 +689,7 @@ This project demonstrates my frontend development capabilities alongside PM work
                 {project.challenges && project.challenges.length > 0 && (
                   <Card className="bg-[#1E293B] border-slate-700">
                     <CardContent className="p-6 md:p-8">
-                      <h3 className="text-xl font-bold text-[#F8FAFC] mb-4">Challenges & Solutions</h3>
+                      <h3 className="text-xl font-bold text-[#F8FAFC] mt-6 md:mt-2 lg:mt-0 mb-4">Challenges & Solutions</h3>
                       <div className="space-y-4">
                         {project.challenges.map((challenge, idx) => (
                           <div key={idx} className="border-l-2 border-[#F1A7C6] pl-4">
@@ -763,7 +718,7 @@ This project demonstrates my frontend development capabilities alongside PM work
                 {/* Impact */}
                 <Card className="bg-[#1E293B] border-slate-700">
                   <CardContent className="p-6 md:p-8">
-                    <div className="flex items-start gap-3 mb-4">
+                    <div className="flex items-start gap-3 mt-6 md:mt-2 lg:mt-0 mb-4">
                       <div className="p-2 bg-[#F1A7C6]/10 rounded-lg">
                         <TrendingUp className="h-5 w-5 text-[#F1A7C6]" />
                       </div>
@@ -784,7 +739,7 @@ This project demonstrates my frontend development capabilities alongside PM work
                 {project.learnings && project.learnings.length > 0 && (
                   <Card className="bg-[#1E293B] border-slate-700">
                     <CardContent className="p-6 md:p-8">
-                      <div className="flex items-start gap-3 mb-4">
+                      <div className="flex items-start gap-3  mt-6 md:mt-2 lg:mt-0 mb-4">
                         <div className="p-2 bg-[#F1A7C6]/10 rounded-lg">
                           <Lightbulb className="h-5 w-5 text-[#F1A7C6]" />
                         </div>
@@ -793,7 +748,7 @@ This project demonstrates my frontend development capabilities alongside PM work
                       <ul className="space-y-2">
                         {project.learnings.map((learning, idx) => (
                           <li key={idx} className="flex items-start gap-3">
-                            <span className="text-[#F1A7C6] mt-1">•</span>
+                            <span className="text-[#F1A7C6]">•</span>
                             <span className="text-slate-300 text-sm">{learning}</span>
                           </li>
                         ))}
@@ -809,7 +764,7 @@ This project demonstrates my frontend development capabilities alongside PM work
                 {/* My Role */}
                 <Card className="bg-[#1E293B] border-slate-700">
                   <CardContent className="p-6">
-                    <h3 className="text-lg font-bold text-[#F8FAFC] mb-2">My Role</h3>
+                    <h3 className="text-lg font-bold text-[#F8FAFC] mt-4 mb-2">My Role</h3>
                     <p className="text-sm text-[#F1A7C6] mb-3">{project.role}</p>
                     <ul className="space-y-2">
                       {project.myRole.map((item, idx) => (
@@ -826,7 +781,7 @@ This project demonstrates my frontend development capabilities alongside PM work
                 {project.metrics && (
                   <Card className="bg-[#1E293B] border-slate-700">
                     <CardContent className="p-6">
-                      <h3 className="text-lg font-semibold text-[#F8FAFC] mb-3">Key Metrics</h3>
+                      <h3 className="text-lg font-semibold text-[#F8FAFC] mt-4 mb-2">Key Metrics</h3>
                       <div className="space-y-3">
                         {Object.entries(project.metrics).map(([key, value], idx) => (
                           <div key={idx} className="flex justify-between items-start gap-2">
@@ -842,25 +797,27 @@ This project demonstrates my frontend development capabilities alongside PM work
                     </CardContent>
                   </Card>
                 )}
-                
-                {/* Technologies */}
-                <Card className="bg-[#1E293B] border-slate-700">
+
+                {/* Prototype Links */} 
+                {project.prototypeUrl && (
+                  <Card className="bg-[#1E293B] border-slate-700">
                   <CardContent className="p-6">
-                    <h3 className="text-lg font-semibold text-[#F8FAFC] mb-1">Technologies</h3>
-                    <p className="text-xs text-slate-400 mb-3">Built with</p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech, idx) => (
-                        <Badge 
-                          key={idx} 
-                          variant="secondary" 
-                          className="bg-slate-900/60 border border-slate-600 text-slate-300 px-2 py-1 text-xs font-normal"
+                    <h3 className="text-lg font-semibold text-[#F8FAFC] mt-4 mb-3">Links</h3>
+                    <div className="flex flex-col gap-3">
+                      {project.prototypeUrl && (
+                        <a
+                          href={project.prototypeUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-full border border-[#F1A7C6]/30 bg-[#F1A7C6]/10 text-[#F1A7C6] hover:bg-[#F1A7C6]/20 hover:border-[#F1A7C6]/50 font-semibold py-2.5 px-4 rounded-lg flex items-center justify-center gap-2 transition-all duration-200 text-sm"
                         >
-                          {tech}
-                        </Badge>
-                      ))}
+                          <ExternalLink className="h-4 w-4" /> View Prototype
+                        </a>
+                      )}
                     </div>
                   </CardContent>
                 </Card>
+                  )}
               </div>
             </div>
           </div>
