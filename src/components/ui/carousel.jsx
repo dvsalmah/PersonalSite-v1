@@ -1,5 +1,6 @@
 import * as React from "react"
 import useEmblaCarousel from "embla-carousel-react"
+import { ArrowRight, ArrowLeft } from "lucide-react"
 
 const CarouselContext = React.createContext(null)
 
@@ -45,7 +46,7 @@ const CarouselPrevious = React.forwardRef(({ className, ...props }, ref) => {
       onClick={() => emblaApi?.scrollPrev()}
       {...props}
     >
-      ←
+      <ArrowLeft className="h-4 w-4" />
     </button>
   )
 })
@@ -60,7 +61,7 @@ const CarouselNext = React.forwardRef(({ className, ...props }, ref) => {
       onClick={() => emblaApi?.scrollNext()}
       {...props}
     >
-      →
+      <ArrowRight className="h-4 w-4" />
     </button>
   )
 })
