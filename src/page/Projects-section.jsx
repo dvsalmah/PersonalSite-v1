@@ -10,45 +10,45 @@ const Projects = () => {
       id: "urjobs",
       title: "UrJobs",
       tagline: "Smart Steps Towards Your Dream Career",
-      description: "Comprehensive career development platform integrating job search, mentoring, and skill certification. Secured 3rd place in BPC Multimedia competition.",
+      description: "Comprehensive career development platform integrating job search, mentoring, and skill certification.",
       tags: ["Career-Tech", "Marketing Lead", "GTM Strategy", "3-Person Team"],
-      context: "BPC Multimedia - IT Fest",
-      logo: "💼"
+      context: "Competition Project",
+      logo: "/assets/urjobs-icon.webp"
     },
     {
       id: "styleme",
       title: "StyleMe",
       tagline: "When 'Nothing to Wear' Meets 'What to Wear Next'",
-      description: "Indonesia's first hybrid fashion assistant combining AI-powered recommendations with professional stylist consultations. Top 7 finalist in BPC EBI Fest.",
+      description: "Hybrid fashion assistant combining AI-powered recommendations with professional stylist consultations.",
       tags: ["Fashion-Tech", "Strategy Lead", "Product Vision", "3-Person Team"],
-      context: "BPC EBI Fest 2025",
-      logo: "👗"
+      context: "Competition Project",
+      logo: "/assets/styleme-icon.webp"
     },
     {
       id: "saveup",
       title: "SaveUp",
       tagline: "Smart Habits for Your Brighter Financial Future",
-      description: "AI-powered money management app for Gen Z. Led product definition and Agile development in internal hackathon using Scrum methodology.",
+      description: "AI-powered money management app for Gen Z. Led product definition and Agile development in Raion Hackjam using Scrum methodology.",
       tags: ["Fintech", "Product Manager", "Agile/Scrum", "3-Person Team"],
-      context: "HackJam #14",
-      logo: "💰"
+      context: "Collaboration Project",
+      logo: "/assets/saveup-icon.webp"
     },
     {
       id: "personalsite-v1",
       title: "PersonalSite-v1",
       tagline: "Modern Portfolio Crafted with Performance & Motion",
-      description: "Personal portfolio website showcasing PM projects and frontend skills. Built with React, Framer Motion, and Tailwind CSS achieving 95+ Lighthouse scores.",
-      tags: ["React.js", "Framer Motion", "Tailwind CSS", "Performance"],
+      description: "Personal portfolio website built with React.js, JavaScript, and ShadcnUI.",
+      tags: ["React.js", "JavaScript", "Tailwind CSS", "ShadcnUI", "Framer Motion"],
       context: "Personal Project",
       github: "https://github.com/dvsalmah/PersonalSite-v1",
       liveDemo: "https://dealovaa-site.vercel.app",
-      logo: "🌐"
+      logo: "/assets/personalsite-icon.webp"
     }
   ];
 
   return (
     <section id="projects" className="relative py-24 bg-[#0F172A] text-slate-100 px-8 md:px-16 lg:px-24">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-4xl lg:max-w-5xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-[#F8FAFC] mb-4">
@@ -71,7 +71,15 @@ const Projects = () => {
                 {/* Project Header */}
                 <div className="flex items-center gap-3 mb-3">
                   <div className="h-12 w-12 mt-4 shrink-0 rounded-full bg-slate-900 flex items-center justify-center text-2xl border border-slate-700 group-hover:border-[#F1A7C6] transition-colors">
-                    {project.logo}
+                  {project.logo.startsWith('/') || project.logo.startsWith('http') ? (
+                    <img 
+                      src={project.logo} 
+                      alt={`${project.title} logo`}
+                      className="w-[95%] h-[95%] object-cover rounded-full"
+                    />
+                  ) : (
+                    <span>{project.logo}</span>
+                  )}
                   </div>
                   <div className="flex-1 min-w-0">
                     <h3 className="font-bold mt-4 text-lg text-[#F8FAFC] tracking-tight truncate">
@@ -89,13 +97,13 @@ const Projects = () => {
                 </p>
 
                 {/* Description */}
-                <p className="text-slate-400 text-sm font-normal leading-relaxed mb-4 line-clamp-3 flex-grow">
+                <p className="text-slate-400 text-sm font-normal leading-relaxed mb-4 line-clamp-2 flex-grow">
                   {project.description}
                 </p>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tags.slice(0, 3).map((tag, idx) => (
+                <div className="flex flex-wrap gap-1 mb-4">
+                  {project.tags.slice(0, 2).map((tag, idx) => (
                     <Badge
                       key={idx}
                       variant="secondary"
@@ -151,12 +159,6 @@ const Projects = () => {
                       <ExternalLink size={18} />
                     </a>
                   )}
-
-                  {/* Category Badge (Optional - bisa dihapus kalau tidak perlu) */}
-                  <div className="flex items-center gap-1 text-xs text-slate-500">
-                    <Target size={14} className="text-[#F1A7C6]" />
-                    <span className="hidden sm:inline">{project.category}</span>
-                  </div>
                 </div>
 
               </CardContent>
