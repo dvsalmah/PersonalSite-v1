@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Award, Users, Target, CheckCircle2, TrendingUp, Lightbulb, Github, ExternalLink, CalendarMinus2, Images } from 'lucide-react';
-import { Badge } from '../components/ui/badge';
-import { Card, CardContent } from '../components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent } from '@/components/ui/card';
 import {
     Carousel,
     CarouselContent,

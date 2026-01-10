@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Input } from '../components/ui/input'; 
-import { Textarea } from '../components/ui/textarea'; 
+import { Input } from '@/components/ui/input'; 
+import { Textarea } from '@/components/ui/textarea'; 
 import {SendHorizonal, Mail, Github, Instagram, Linkedin } from 'lucide-react';
 
 const inputStyles = "w-full px-3 py-2 bg-slate-800 border border-slate-500 rounded-lg focus:border-[#F1A7C6] focus:shadow-xl focus:shadow-[#F1A7C6]/10 focus:outline-none transition-colors text-slate-100 placeholder:text-slate-500";
