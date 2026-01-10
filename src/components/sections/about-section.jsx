@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
-import { Card, CardContent } 
-from "@/components/ui/card";
+import Stack from "@/components/ui/stack";
 
 const AboutMe = () => {
   const photos = [
@@ -15,7 +7,16 @@ const AboutMe = () => {
     {id:2, src:"/assets/slide2.webp", alt:"Photo 2"},
     {id:3, src:"/assets/slide3.webp", alt:"Photo 3"},
     {id:4, src:"/assets/slide4.webp", alt:"Photo 4"},
-  ]
+  ];
+
+  const stackCards = photos.map(photo => (
+    <img
+      src={photo.src}
+      alt={photo.alt}
+      className="w-full h-full object-cover pointer-events-none rounded-2xl"
+    />
+  ));
+
   return (
     <section id="about" className="py-20 md:pt-8 lg:pt-12 bg-[#0F172A] relative transition-colors duration-300 overflow-hidden">
       <div className="lg:max-w-6xl md:max-w-2xl mx-auto px-6 md:px-5">
@@ -31,27 +32,21 @@ const AboutMe = () => {
             </p>
           </div>
 
-          <div className="flex-shrink-0 order-2 md:order-1">
-            <Carousel className="w-full max-w-xs">
-              <CarouselContent>
-                {photos.map((photo) => (
-                  <CarouselItem key={photo.id}>
-                    <div className="h-72 w-80 bg-primary/20 flex items-center justify-center rounded-xl overflow-hidden">
-                      <img 
-                        src={photo.src} 
-                        alt={photo.alt}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-
-              <CarouselPrevious className="left-2" />
-              <CarouselNext className="right-2" />
-            </Carousel>
+          <div className="flex-shrink-0 order-2 md:order-1 pr-4 lg:pr-8">
+            <div className="w-64 h-72 lg:w-72 lg:h-80">
+              <Stack
+                cards={stackCards}
+                randomRotation={true}
+                sensitivity={150}
+                sendToBackOnClick={true}
+                autoplay={true}
+                autoplayDelay={3000}
+                pauseOnHover={true}
+                mobileClickOnly={true}
+                animationConfig={{ stiffness: 260, damping: 20 }}
+              />
+            </div>
           </div>
-          
         </div>
       </div>
     </section>
