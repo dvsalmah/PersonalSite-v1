@@ -1,8 +1,15 @@
 import React from 'react';
-import {Timeline} from "../components/ui/timeline";
+import { Timeline } from "@/components/ui/timeline";
 
 const Experiences = () => {
   const experiencesData = [
+    {
+      title: "PT. Bank Central Asia Tbk.",
+      year: "Des 2025 - Present",
+      role: "Bakti BCA Scholarship Awardee 2026",
+      description: "Chosen as a Bakti BCA Scholarship Awardee for academic excellence and leadership impact. Actively involved in development programs, workshops, and training sessions focused on business strategy, financial analysis, and professional communication.",
+      tech: ["Leadership", "Problem solving", "Professional Development", "Networking"]
+    },
     {
       title: "Raion Community FILKOM UB",
       year: "Jan 2026 - Present",
@@ -44,9 +51,9 @@ const Experiences = () => {
     }
   ];
   return (
-    <section id="experiences" className="py-24 bg-[#1E293B]">
+    <section id="experiences" className="py-24 bg-[#1E293B] text-[#F8FAFC]">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-[#F8FAFC]">Experiences</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center ">Experiences</h2>
         <p className="text-center mb-8 mt-4 text-[#CBD5E1]">A journey of growth through impactful roles</p>
         <Timeline data={experiencesData}/>
       </div>
