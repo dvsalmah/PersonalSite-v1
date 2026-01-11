@@ -39,7 +39,7 @@ const Footer = () => {
         </div>
           </div>
           <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-400/60 to-transparent my-4" />
-          <p className="flex justify-center mb-4 md:mb-0">Dealova &copy; 2026 All rights reserved.</p>
+          <p className="flex justify-center mb-4 md:mb-0">&copy; 2026 Dealova. All rights reserved.</p>
         </div>
       </div>
     </footer>
