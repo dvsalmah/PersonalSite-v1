@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { Input } from '@/components/ui/input'; 
 import { Textarea } from '@/components/ui/textarea'; 
 import {SendHorizonal, Mail, Github, Instagram, Linkedin } from 'lucide-react';
@@ -22,23 +23,105 @@ const Contact = () => {
     message: ''
   });
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+  const [isLoading, setIsLoading] = useState(false);
+  const [status, setStatus] = useState({ type: '', message: '' });
+  const [emailError, setEmailError] = useState('');
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailRegex.test(email);
   };
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+
+    if (name === 'email') {
+      if (value && !validateEmail(value)) {
+        setEmailError('Invalid email format');
+      } else {
+        setEmailError('');
+      }
+    }
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    
+    if (!validateEmail(formData.email)) {
+      setEmailError('Invalid email format');
+      return;
+    }
+    
+    setIsLoading(true);
+    setStatus({ type: '', message: '' });
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      setStatus({
+        type: 'error',
+        message: 'Email configuration is missing. Please contact the administrator.'
+      });
+      setIsLoading(false);
+      return;
+    }
+
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+    };
+
+    try {
+      const response = await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams,
+        publicKey
+      );
+
+      if (response.status === 200) {
+        setStatus({
+          type: 'success',
+          message: 'Message sent successfully! I\'ll get back to you soon.'
+        });
+        
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+        setEmailError('');
+      }
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      setStatus({
+        type: 'error',
+        message: 'Failed to send message. Please try again or email me directly.'
+      });
+    } finally {
+      setIsLoading(false);
+      
+      setTimeout(() => {
+        setStatus({ type: '', message: '' });
+      }, 5000);
+    }
   };
 
   return (
     <section id="contact" className="py-24 bg-[#0F172A] text-slate-100 px-8 md:px-16 lg:px-24">
       <div className="max-w-5xl mx-auto px-4 md:px-0">
       <h2 className="text-3xl md:text-4xl font-bold text-center text-[#F8FAFC]">Get in Touch</h2>
-        <p className="text-center mb-8 mt-4 text-[#CBD5E1]">Have an idea, a project, or something worth exploring? Let’s talk!</p>       
+        <p className="text-center mb-8 mt-4 text-[#CBD5E1]">Have an idea, a project, or something worth exploring? Let's talk!</p>       
 
         <div className="grid grid-cols-1 md:grid-cols-[1.8fr_1fr] lg:grid-cols-[2fr_1fr] gap-12 md:gap-8 lg:gap-10 mt-8 pt-8">
           <form className="space-y-4 md:space-y-2" onSubmit={handleSubmit}>
@@ -55,14 +138,23 @@ const Contact = () => {
                 />
               </FormField>
 
-              <FormField label="Email">
+              <FormField label={
+                <div className="flex items-center gap-2">
+                  <span>Email</span>
+                  {emailError && (
+                    <span className="text-red-400 text-xs drop-shadow-[0_0_8px_rgba(239,68,68,0.6)]">
+                      {emailError}
+                    </span>
+                  )}
+                </div>
+              }>
                 <Input
                   type="email"
                   name="email"
                   placeholder="john@example.com"
                   value={formData.email}
                   onChange={handleChange}
-                  className={inputStyles}
+                  className={`${inputStyles} ${emailError ? 'border-red-500 focus:border-red-500' : ''}`}
                   required
                 />
               </FormField>
@@ -91,14 +183,27 @@ const Contact = () => {
               />
             </FormField>
 
-            <div className='pt-0 md:pt-2'>
-            <button 
-              type="submit" 
-              className="
-                w-[150px] lg:w-[180px] flex items-center justify-center gap-2 rounded bg-[#F1A7C6] px-6 md:px-6 lg:px-8 py-2.5 md:py-3 text-xs lg:text-sm font-bold text-slate-900 shadow-[0_0_20px_rgba(241,167,198,0.3)] transition transform hover:bg-[#F1A7C6]/90 whitespace-nowrap">
-              Send Message
-              <SendHorizonal className='w-[16px] h-[16px] lg:w-[20px] md:h-[20px] transition-transform'/>
-            </button>
+            <div className='pt-0 md:pt-2 flex items-center gap-4'>
+              <button 
+                type="submit"
+                disabled={isLoading}
+                className={`
+                  w-[150px] lg:w-[180px] flex items-center justify-center gap-2 rounded bg-[#F1A7C6] px-6 md:px-6 lg:px-8 py-2.5 md:py-3 text-xs lg:text-sm font-bold text-slate-900 shadow-[0_0_20px_rgba(241,167,198,0.3)] transition transform whitespace-nowrap
+                  ${isLoading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#F1A7C6]/90'}
+                `}>
+                {isLoading ? 'Sending...' : 'Send Message'}
+                <SendHorizonal className={`w-[16px] h-[16px] lg:w-[20px] md:h-[20px] transition-transform ${isLoading ? 'animate-pulse' : ''}`}/>
+              </button>
+
+            {status.message && (
+              <p className={`text-sm font-sm ${
+                status.type === 'success' 
+                  ? 'text-green-400 drop-shadow-[0_0_8px_rgba(34,197,94,0.6)]' 
+                  : 'text-red-400 drop-shadow-[0_0_8px_rgba(239,68,68,0.6)]'
+              }`}>
+                {status.message}
+              </p>
+            )}
             </div>
           </form>
 
