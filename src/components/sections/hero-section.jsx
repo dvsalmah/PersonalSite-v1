@@ -1,5 +1,6 @@
 import React from 'react';
 import profilePic from '/assets/profile-photo.webp';
+import { scrollToSection } from "@/lib/utils";
 
 const Hero = () => {
   return (
@@ -34,24 +35,24 @@ const Hero = () => {
           </p>
 
           <div className="mt-6 md:mt-8 flex gap-3 md:gap-4 justify-center md:justify-start">
-  <a 
-    href="#contact" 
-    className="
-      inline-block rounded-full bg-[#F1A7C6] px-6 md:px-6 lg:px-8 py-2.5 md:py-3 text-xs lg:text-sm font-bold text-slate-900 shadow-[0_0_20px_rgba(241,167,198,0.3)] transition transform hover:bg-[#F1A7C6]/90 hover:-translate-y-1 whitespace-nowrap"
-  >
-    Get in Touch
-  </a>
+          <button 
+            onClick={() => scrollToSection('contact')}
+            className="
+              inline-block rounded-full bg-[#F1A7C6] px-6 md:px-6 lg:px-8 py-2.5 md:py-3 text-xs lg:text-sm font-bold text-slate-900 shadow-[0_0_20px_rgba(241,167,198,0.3)] transition transform hover:bg-[#F1A7C6]/90 hover:-translate-y-1 whitespace-nowrap"
+          >
+            Get in Touch
+          </button>
 
-  <a 
-    href="https://docs.google.com/document/d/1sScghwcyFPmIeSGEEkkpL6tSK1l1PIlZ95X3KOnt3lc/edit?usp=sharing" 
-    target='_blank'
-    rel='noopener noreferrer'
-    className="
-      inline-block rounded-full border border-slate-600 px-6 md:px-6 lg:px-8 py-2.5 md:py-3 text-xs lg:text-sm font-semibold text-slate-300 hover:bg-slate-800 transition transform hover:-translate-y-1 whitespace-nowrap"
-  >
-    Download CV
-  </a>
-</div>
+        <a 
+          href="https://docs.google.com/document/d/1sScghwcyFPmIeSGEEkkpL6tSK1l1PIlZ95X3KOnt3lc/edit?usp=sharing" 
+          target='_blank'
+          rel='noopener noreferrer'
+          className="
+            inline-block rounded-full border border-slate-600 px-6 md:px-6 lg:px-8 py-2.5 md:py-3 text-xs lg:text-sm font-semibold text-slate-300 hover:bg-slate-800 transition transform hover:-translate-y-1 whitespace-nowrap"
+        >
+          Download CV
+        </a>
+      </div>
         </div>
         <div className="flex justify-end md:px-4">
           <div className="relative group w-56 h-72 md:w-56 md:h-72 lg:w-80 lg:h-96 cursor-pointer">

@@ -1,4 +1,5 @@
 import React from 'react';
+import { scrollToSection } from "@/lib/utils";
 
 const Navbar = () => {
   const navItems = [
@@ -32,6 +33,10 @@ const Navbar = () => {
           <a
             key={index}
             href={item.link}
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection(item.link.substring(1)); // Remove '#' from link
+            }}
             className="
               px-2 md:px-5 py-2
               text-xs md:text-sm font-medium

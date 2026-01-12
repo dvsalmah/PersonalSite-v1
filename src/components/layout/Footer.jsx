@@ -1,5 +1,6 @@
 import React from 'react';
 import {Github, Linkedin, Instagram} from 'lucide-react';
+import { scrollToSection } from '@/lib/utils';
 
 const Footer = () => {
   return (
@@ -7,13 +8,16 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto px-4">
         <div className='flex flex-col'>
         <div className="flex flex-row justify-between items-center gap-6">
-          <a href='#home'>
+          <button 
+            onClick={() => scrollToSection('home')}
+            className="cursor-pointer"
+          >
               <img 
                 src="/icon.svg" 
                 alt="Dealova Logo" 
                 className="w-10 h-10 object-contain"
               />
-          </a>
+          </button>
           <div className="flex space-x-4 text-[#CBD5E1]/60">
               <a className="flex items-center hover:text-[#F8FAFC]" 
               href='https://github.com/dvsalmah'
