@@ -92,33 +92,33 @@ const Hero = () => {
           </p>
 
           <motion.div 
-            className="mt-6 md:mt-8 flex gap-3 md:gap-4 justify-center md:justify-start"
-            variants={buttonContainer}
-            initial="initial"
-            animate="animate"
-          >
-            <motion.button 
-              onClick={() => scrollToSection('contact')}
-              variants={buttonVariants}
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-block rounded-full bg-[#F1A7C6] px-6 md:px-6 lg:px-8 py-2.5 md:py-3 text-xs lg:text-sm font-bold text-slate-900 shadow-[0_0_20px_rgba(241,167,198,0.3)] transition transform hover:bg-[#F1A7C6]/90 hover:-translate-y-1 whitespace-nowrap"
-            >
-              Get in Touch
-            </motion.button>
+  className="mt-6 md:mt-8 flex gap-3 md:gap-4 justify-center md:justify-start"
+  variants={buttonContainer}
+  initial="initial"
+  animate="animate"
+>
+  <motion.button 
+    onClick={() => scrollToSection('contact')}
+    variants={buttonVariants}
+    whileHover={{ y: -3 }}
+    whileTap={{ scale: 0.98 }}
+    className="inline-block rounded-full bg-[#F1A7C6] px-6 md:px-6 lg:px-8 py-2.5 md:py-3 text-xs lg:text-sm font-bold text-slate-900 shadow-[0_0_20px_rgba(241,167,198,0.3)] hover:bg-[#F1A7C6]/90 whitespace-nowrap"
+  >
+    Get in Touch
+  </motion.button>
 
-            <motion.a 
-              href="https://www.canva.com/design/DAG-SG-XbFE/fAA1VVO0OFh3db47JcdWXA/edit?utm_content=DAG-SG-XbFE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" 
-              target='_blank'
-              rel='noopener noreferrer'
-              variants={buttonVariants}
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-block rounded-full border border-slate-600 px-6 md:px-6 lg:px-8 py-2.5 md:py-3 text-xs lg:text-sm font-semibold text-slate-300 hover:bg-slate-800 transition transform hover:-translate-y-1 whitespace-nowrap"
-            >
-              Download CV
-            </motion.a>
-          </motion.div>
+  <motion.a 
+    href="https://www.canva.com/design/DAG-SG-XbFE/fAA1VVO0OFh3db47JcdWXA/edit?utm_content=DAG-SG-XbFE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" 
+    target='_blank'
+    rel='noopener noreferrer'
+    variants={buttonVariants}
+    whileHover={{ y: -3 }}
+    whileTap={{ scale: 0.98 }}
+    className="inline-block rounded-full border border-slate-600 px-6 md:px-6 lg:px-8 py-2.5 md:py-3 text-xs lg:text-sm font-semibold text-slate-300 hover:bg-slate-800 whitespace-nowrap"
+  >
+    Download CV
+  </motion.a>
+</motion.div>
         </motion.div>
 
         <motion.div 

@@ -263,8 +263,6 @@ const Contact = () => {
               <motion.button 
                 type="submit"
                 disabled={isLoading}
-                whileHover={!isLoading ? { scale: 1.05, y: -2 } : {}}
-                whileTap={!isLoading ? { scale: 0.98 } : {}}
                 className={`
                   w-[150px] lg:w-[180px] flex items-center justify-center gap-2 rounded bg-[#F1A7C6] px-6 md:px-6 lg:px-8 py-2.5 md:py-3 text-xs lg:text-sm font-bold text-slate-900 shadow-[0_0_20px_rgba(241,167,198,0.3)] transition transform whitespace-nowrap
                   ${isLoading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#F1A7C6]/90'}
