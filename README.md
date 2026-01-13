@@ -1,16 +1,56 @@
-# React + Vite
+<div>
+  <img alt="preview" src="@/assets/preview.png" height="200" />
+  <img alt="logo" src="public/icon.svg" height="200" />
+</div>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Personal Website v1 🌐✨
 
-Currently, two official plugins are available:
+A modern and responsive personal website showcasing professional portfolio, skills, and projects. Built with clean design principles and optimized for performance across all devices.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## React Compiler
+- **📱 Fully Responsive** - Optimized for all devices and screen sizes
+- **🎨 Modern UI/UX** - Clean and professional design with smooth animations
+- **💼 Portfolio Showcase** - Dedicated section to display projects and work samples
+- **👤 About Section** - Personal introduction and professional background
+- **⏰ Experience Timeline** - Professional work experience and career journey
+- **🛠️ Skills Display** - Visual representation of technical skills and expertise
+- **📧 Contact Form** - Interactive contact form for professional inquiries
+- **⚡ Fast Loading** - Optimized for quick loading times and better user experience
+- **🔍 SEO Friendly** - Structured markup for better search engine visibility
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+<img src="https://skillicons.dev/icons?i=react,js,tailwind,vercel,git,github" alt="Tech Stack" />
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Framework**: ![React.js](https://img.shields.io/badge/React.js-000000?style=flat&logo=react&logoColor=white&logoWidth=12)
+- **Language**: ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black&logoWidth=12)
+- **UI Library**: ![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=white&logoWidth=12)
+- **Styling**: ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat&logo=tailwind-css&logoColor=white&logoWidth=12)
+- **UI Components**: ![Shadcn UI](https://img.shields.io/badge/Shadcn_UI-000000?style=flat&logo=shadcnui&logoColor=white&logoWidth=12)
+- **Animations**: ![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=flat&logo=framer&logoColor=white&logoWidth=12)
+- **Icons**: ![Lucide](https://img.shields.io/badge/Lucide-000000?style=flat&logo=lucide&logoColor=white&logoWidth=12)
+- **Version Control**: ![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white&logoWidth=12)
+- **Deployment**: ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white&logoWidth=12)
+
+## 📁 Project Structure
+
+```
+PERSONALSITE-V1/
+├── public/
+│   └── assets/              # Static assets
+└── src/
+    ├── components/
+    │   ├── layout/          # Layout components
+    │   ├── sections/        # Page sections (CURRENTLY IN src/sections)
+    │   └── ui/              # Shadcn UI components
+    └── lib/                 # Utility functions
+```
+
+
+## 👨‍💻 Author
+
+**Dealova Nabila**
+- GitHub: [dvsalmah](https://github.com/dvsalmah)
+- LinkedIn: [dealova-ns](https://linkedin.com/in/dealova-ns)
+- Website: [dealovaa-site.vercel.app](https://dealovaa-site.vercel.app)
