@@ -1,8 +1,7 @@
-<div>
-  <img alt="preview" src="@/assets/preview.png" height="200" />
-  <img alt="logo" src="public/icon.svg" height="200" />
-</div>
-
+<p align="center">
+  <img alt="preview" src="public/assets/preview.png" height="200" />
+  &nbsp;&nbsp;&nbsp;&nbsp; <img alt="logo" src="public/icon.svg" height="200" />
+</p>
 # Personal Website v1 🌐✨
 
 A modern and responsive personal website showcasing professional portfolio, skills, and projects. Built with clean design principles and optimized for performance across all devices.
