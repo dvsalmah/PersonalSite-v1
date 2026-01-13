@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import { Input } from '@/components/ui/input'; 
 import { Textarea } from '@/components/ui/textarea'; 
@@ -117,14 +118,84 @@ const Contact = () => {
     }
   };
 
+  const titleVariants = {
+    initial: { opacity: 0, y: 30 },
+    whileInView: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
+  const subtitleVariants = {
+    initial: { opacity: 0, y: 20 },
+    whileInView: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut", delay: 0.1 }
+    }
+  };
+
+  const formVariants = {
+    initial: { opacity: 0, x: -40 },
+    whileInView: { 
+      opacity: 1, 
+      x: 0,
+      transition: { duration: 0.7, ease: "easeOut", delay: 0.2 }
+    }
+  };
+
+  const socialContainerVariants = {
+    initial: {},
+    whileInView: {
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.4
+      }
+    }
+  };
+
+  const socialLinkVariants = {
+    initial: { opacity: 0, x: 20 },
+    whileInView: { 
+      opacity: 1, 
+      x: 0,
+      transition: { duration: 0.4, ease: "easeOut" }
+    }
+  };
+
   return (
     <section id="contact" className="py-24 bg-[#0F172A] text-slate-100 px-8 md:px-16 lg:px-24">
       <div className="max-w-5xl mx-auto px-4 md:px-0">
-      <h2 className="text-3xl md:text-4xl font-bold text-center text-[#F8FAFC]">Get in Touch</h2>
-        <p className="text-center mb-8 mt-4 text-[#CBD5E1]">Have an idea, a project, or something worth exploring? Let's talk!</p>       
+        <motion.h2 
+          className="text-3xl md:text-4xl font-bold text-center text-[#F8FAFC]"
+          variants={titleVariants}
+          initial="initial"
+          whileInView="whileInView"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          Get in Touch
+        </motion.h2>
+
+        <motion.p 
+          className="text-center mb-8 mt-4 text-[#CBD5E1]"
+          variants={subtitleVariants}
+          initial="initial"
+          whileInView="whileInView"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          Have an idea, a project, or something worth exploring? Let's talk!
+        </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-[1.8fr_1fr] lg:grid-cols-[2fr_1fr] gap-12 md:gap-8 lg:gap-10 mt-8 pt-8">
-          <form className="space-y-4 md:space-y-2" onSubmit={handleSubmit}>
+          <motion.form 
+            className="space-y-4 md:space-y-2" 
+            onSubmit={handleSubmit}
+            variants={formVariants}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true, amount: 0.2 }}
+          >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <FormField label="Name">
                 <Input
@@ -142,9 +213,14 @@ const Contact = () => {
                 <div className="flex items-center gap-2">
                   <span>Email</span>
                   {emailError && (
-                    <span className="text-red-400 text-xs drop-shadow-[0_0_8px_rgba(239,68,68,0.6)]">
+                    <motion.span 
+                      className="text-red-400 text-xs drop-shadow-[0_0_8px_rgba(239,68,68,0.6)]"
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
                       {emailError}
-                    </span>
+                    </motion.span>
                   )}
                 </div>
               }>
@@ -184,61 +260,91 @@ const Contact = () => {
             </FormField>
 
             <div className='pt-0 md:pt-2 flex items-center gap-4'>
-              <button 
+              <motion.button 
                 type="submit"
                 disabled={isLoading}
+                whileHover={!isLoading ? { scale: 1.05, y: -2 } : {}}
+                whileTap={!isLoading ? { scale: 0.98 } : {}}
                 className={`
                   w-[150px] lg:w-[180px] flex items-center justify-center gap-2 rounded bg-[#F1A7C6] px-6 md:px-6 lg:px-8 py-2.5 md:py-3 text-xs lg:text-sm font-bold text-slate-900 shadow-[0_0_20px_rgba(241,167,198,0.3)] transition transform whitespace-nowrap
                   ${isLoading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#F1A7C6]/90'}
-                `}>
+                `}
+              >
                 {isLoading ? 'Sending...' : 'Send Message'}
                 <SendHorizonal className={`w-[16px] h-[16px] lg:w-[20px] md:h-[20px] transition-transform ${isLoading ? 'animate-pulse' : ''}`}/>
-              </button>
+              </motion.button>
 
-            {status.message && (
-              <p className={`text-sm font-sm ${
-                status.type === 'success' 
-                  ? 'text-green-400 drop-shadow-[0_0_8px_rgba(34,197,94,0.6)]' 
-                  : 'text-red-400 drop-shadow-[0_0_8px_rgba(239,68,68,0.6)]'
-              }`}>
-                {status.message}
-              </p>
-            )}
+              {status.message && (
+                <motion.p 
+                  className={`text-sm font-sm ${
+                    status.type === 'success' 
+                      ? 'text-green-400 drop-shadow-[0_0_8px_rgba(34,197,94,0.6)]' 
+                      : 'text-red-400 drop-shadow-[0_0_8px_rgba(239,68,68,0.6)]'
+                  }`}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {status.message}
+                </motion.p>
+              )}
             </div>
-          </form>
+          </motion.form>
 
-            <div className="space-y-4 text-[#CBD5E1]/60">
-              <a className="flex items-center gap-2 hover:text-[#F1A7C6]" 
+          <motion.div 
+            className="space-y-4 text-[#CBD5E1]/60"
+            variants={socialContainerVariants}
+            initial="initial"
+            whileInView="whileInView"
+            viewport={{ once: true, amount: 0.3 }}
+          >
+            <motion.a 
+              className="flex items-center gap-2 hover:text-[#F1A7C6]" 
               href="mailto:dealovasalmah12@gmail.com"
-              >
-                <Mail size={18}/>
-                dealovasalmah12@gmail.com
-              </a>
-              <a className="flex items-center gap-2 hover:text-[#F1A7C6]" 
+              variants={socialLinkVariants}
+              whileHover={{ x: 5, transition: { duration: 0.2 } }}
+            >
+              <Mail size={18}/>
+              dealovasalmah12@gmail.com
+            </motion.a>
+
+            <motion.a 
+              className="flex items-center gap-2 hover:text-[#F1A7C6]" 
               href='https://github.com/dvsalmah'
               target='_blank'
               rel='noopener noreferrer'
-              >
-                <Github size={18}/>
-                dvsalmah
-              </a>
-              <a className="flex items-center gap-2 hover:text-[#F1A7C6]" 
+              variants={socialLinkVariants}
+              whileHover={{ x: 5, transition: { duration: 0.2 } }}
+            >
+              <Github size={18}/>
+              dvsalmah
+            </motion.a>
+
+            <motion.a 
+              className="flex items-center gap-2 hover:text-[#F1A7C6]" 
               href='https://linkedin.com/in/dealova-ns'
               target='_blank'
               rel='noopener noreferrer'
-              >
-                <Linkedin size={18}/>
-                dealova-ns
-              </a>
-              <a className="flex items-center gap-2 hover:text-[#F1A7C6]" 
+              variants={socialLinkVariants}
+              whileHover={{ x: 5, transition: { duration: 0.2 } }}
+            >
+              <Linkedin size={18}/>
+              dealova-ns
+            </motion.a>
+
+            <motion.a 
+              className="flex items-center gap-2 hover:text-[#F1A7C6]" 
               href='https://instagram.com/dnabs_'
               target='_blank'
               rel='noopener noreferrer'
-              >
-                <Instagram size={18}/>
-                dnabs_
-              </a>
-            </div>
+              variants={socialLinkVariants}
+              whileHover={{ x: 5, transition: { duration: 0.2 } }}
+            >
+              <Instagram size={18}/>
+              dnabs_
+            </motion.a>
+          </motion.div>
         </div>
       </div>
     </section>

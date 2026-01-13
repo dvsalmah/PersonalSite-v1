@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Award, Users, Target, CheckCircle2, TrendingUp, Lightbulb, Github, ExternalLink, CalendarMinus2, Images } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
@@ -19,6 +20,30 @@ const ProjectDetail = () => {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [projectId]);
+
+    const headerVariants = {
+        initial: { opacity: 0, y: 30 },
+        animate: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+    };
+
+    const imageVariants = {
+        initial: { opacity: 0, scale: 0.98 },
+        animate: { opacity: 1, scale: 1, transition: { duration: 0.7, delay: 0.2 } }
+    };
+
+    const contentVariants = {
+        initial: { opacity: 0, y: 30 },
+        whileInView: { opacity: 1, y: 0 },
+        viewport: { once: true, amount: 0.3 },
+        transition: { duration: 0.6 }
+    };
+
+    const cardVariants = {
+        initial: { opacity: 0, y: 20 },
+        whileInView: { opacity: 1, y: 0 },
+        viewport: { once: true, amount: 0.3 },
+        transition: { duration: 0.5 }
+    };
   
     const projectsData = {
       // ==================== PM PROJECTS ====================
@@ -410,7 +435,11 @@ Market Opportunity: With 70.6 million households in Indonesia and 60% of consume
         <section className="min-h-screen bg-[#0F172A] text-slate-100 pt-28 pb-12 lg:pt-20 px-4 md:px-10 lg:px-20">
           <div className="max-w-4xl md:max-w-5xl mx-auto px-5 md:px-8 space-y-8">
             
-            <div>
+            <motion.div
+                variants={headerVariants}
+                initial="initial"
+                animate="animate"
+            >
               <Link 
                 to="/#projects" 
                 className="inline-flex items-center gap-2 mb-6 text-slate-400 hover:text-[#F8FAFC] transition-colors"
@@ -431,10 +460,14 @@ Market Opportunity: With 70.6 million households in Indonesia and 60% of consume
                   <span>{project.year}</span>
                 </div>
               </div>
-            </div>            
+            </motion.div>
 
-            {/* Image Carousel */}
-            <div className="w-full">
+            <motion.div 
+                className="w-full"
+                variants={imageVariants}
+                initial="initial"
+                animate="animate"
+            >
                 {project.images && project.images.length > 0 ? (
                   <Carousel className="w-full h-full rounded-xl overflow-hidden border border-slate-800 bg-[#1E293B]">
                     <CarouselContent>
@@ -463,15 +496,16 @@ Market Opportunity: With 70.6 million households in Indonesia and 60% of consume
                         />
                     </div>
                 )}
-            </div>
+            </motion.div>
 
-            {/* Main Content Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              
-              {/* Left Column */}
               <div className="lg:col-span-2 space-y-6">
-                
-                {/* About the Project */}
+                <motion.div
+                    variants={cardVariants}
+                    initial="initial"
+                    whileInView="whileInView"
+                    viewport={{ once: true, amount: 0.3 }}
+                >
                 <Card className="bg-[#1E293B] border-slate-700">
                   <CardContent className="p-6 md:p-8">
                     <h3 className="text-xl font-bold text-[#F8FAFC] mt-6 md:mt-2 lg:mt-0 mb-4">About the Project</h3>
@@ -480,8 +514,13 @@ Market Opportunity: With 70.6 million households in Indonesia and 60% of consume
                     </div>
                   </CardContent>
                 </Card>
-
-                {/* Key Features */}
+                </motion.div>
+                <motion.div
+                    variants={cardVariants}
+                    initial="initial"
+                    whileInView="whileInView"
+                    viewport={{ once: true, amount: 0.3 }}
+                >
                 <Card className="bg-[#1E293B] border-slate-700">
                   <CardContent className="p-6 md:p-8">
                     <h3 className="text-xl font-bold text-[#F8FAFC] mt-6 md:mt-2 lg:mt-0 mb-4">Key Features</h3>
@@ -494,13 +533,18 @@ Market Opportunity: With 70.6 million households in Indonesia and 60% of consume
                       ))}
                     </div>
                   </CardContent>
-                </Card>            
+                </Card>
+                </motion.div>
               </div>
 
               {/* Right Column */}
               <div className="space-y-6">
-                
-                {/* Technologies */}
+               <motion.div
+                    variants={cardVariants}
+                    initial="initial"
+                    whileInView="whileInView"
+                    viewport={{ once: true, amount: 0.3 }}
+                >
                 <Card className="bg-[#1E293B] border-slate-700">
                   <CardContent className="p-6 ">
                     <h3 className="text-lg font-semibold text-[#F8FAFC] mt-4 mb-1">Technologies</h3>
@@ -518,8 +562,14 @@ Market Opportunity: With 70.6 million households in Indonesia and 60% of consume
                     </div>
                   </CardContent>
                 </Card>
+                </motion.div>
 
-                {/* Project Links */}
+                <motion.div
+                    variants={cardVariants}
+                    initial="initial"
+                    whileInView="whileInView"
+                    viewport={{ once: true, amount: 0.3 }}
+                >
                 <Card className="bg-[#1E293B] border-slate-700">
                   <CardContent className="p-6">
                     <h3 className="text-lg font-semibold text-[#F8FAFC] mt-4 mb-3">Links</h3>
@@ -548,6 +598,7 @@ Market Opportunity: With 70.6 million households in Indonesia and 60% of consume
                     </div>
                   </CardContent>
                 </Card>
+                </motion.div>
               </div>
             </div>
           </div>
@@ -561,7 +612,11 @@ Market Opportunity: With 70.6 million households in Indonesia and 60% of consume
           <div className="max-w-4xl md:max-w-5xl mx-auto px-5 md:px-8 space-y-8">            
             
             {/* Header */}
-            <div>
+            <motion.div
+                variants={headerVariants}
+                initial="initial"
+                animate="animate"
+            >
               <Link 
                 to="/#projects" 
                 className="inline-flex items-center gap-2 mb-6 text-slate-400 hover:text-[#F8FAFC] transition-colors"
@@ -572,7 +627,6 @@ Market Opportunity: With 70.6 million households in Indonesia and 60% of consume
               <h1 className="text-4xl md:text-5xl font-bold text-[#F8FAFC] mb-2">{project.title}</h1>
               <p className="text-xl text-slate-400 mb-4">{project.tagline}</p>
               
-              {/* Meta info */}
               <div className="flex flex-wrap gap-4 text-sm text-slate-400">
                 <div className="flex items-center gap-2">
                   <Users className="h-4 w-4 text-[#F1A7C6]" />
@@ -583,10 +637,14 @@ Market Opportunity: With 70.6 million households in Indonesia and 60% of consume
                   <span>{project.year}</span>
                 </div>
               </div>
-            </div>
+            </motion.div>
     
-            {/* Image Carousel */}
-            <div className="w-full">
+            <motion.div 
+                className="w-full"
+                variants={imageVariants}
+                initial="initial"
+                animate="animate"
+            >
                 {project.images && project.images.length > 0 ? (
                   <Carousel className="w-full h-full rounded-xl overflow-hidden border border-slate-800 bg-[#1E293B]">
                     <CarouselContent>
@@ -615,15 +673,18 @@ Market Opportunity: With 70.6 million households in Indonesia and 60% of consume
                         />
                     </div>
                 )}
-            </div>
+            </motion.div>
     
-            {/* Main Content Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               
               {/* Left Column */}
               <div className="lg:col-span-2 space-y-6">
-                
-                {/* Context */}
+                <motion.div
+                    variants={cardVariants}
+                    initial="initial"
+                    whileInView="whileInView"
+                    viewport={{ once: true, amount: 0.3 }}
+                >
                 <Card className="bg-[#1E293B] border-slate-700">
                   <CardContent className="p-6 md:p-8">
                     <div className="flex items-start gap-3 mt-6 md:mt-0 mb-4">
@@ -640,8 +701,15 @@ Market Opportunity: With 70.6 million households in Indonesia and 60% of consume
                     </p>
                   </CardContent>
                 </Card>
+                </motion.div>
 
                 {/* Overview */}
+                <motion.div
+                    variants={cardVariants}
+                    initial="initial"
+                    whileInView="whileInView"
+                    viewport={{ once: true, amount: 0.3 }}
+                >
                 <Card className="bg-[#1E293B] border-slate-700">
                   <CardContent className="p-6 md:p-8">
                     <h3 className="text-xl font-bold text-[#F8FAFC] mt-6 md:mt-2 lg:mt-0 mb-4">Project Overview</h3>
@@ -650,6 +718,7 @@ Market Opportunity: With 70.6 million households in Indonesia and 60% of consume
                     </div>
                   </CardContent>
                 </Card>
+                </motion.div>
 
                 {/* Problem & Approach */}
                 <Card className="bg-[#1E293B] border-slate-700">
