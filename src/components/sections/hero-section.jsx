@@ -44,7 +44,7 @@ const Hero = () => {
           </button>
 
         <a 
-          href="https://docs.google.com/document/d/1sScghwcyFPmIeSGEEkkpL6tSK1l1PIlZ95X3KOnt3lc/edit?usp=sharing" 
+          href="https://www.canva.com/design/DAG-SG-XbFE/fAA1VVO0OFh3db47JcdWXA/edit?utm_content=DAG-SG-XbFE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" 
           target='_blank'
           rel='noopener noreferrer'
           className="
