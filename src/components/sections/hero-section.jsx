@@ -4,7 +4,7 @@ import { scrollToSection } from "@/lib/utils";
 
 const Hero = () => {
   return (
-    <section id="home" className="bg-[#0F172A] relative transition-colors duration-300 h-auto md:h-[600px] flex items-start pt-24 lg:pt-6 overflow-hidden">
+    <section id="home" className="bg-[#0F172A] relative transition-colors duration-300 h-auto md:h-[600px] lg:h-[700px] flex items-start pt-24 lg:pt-6 overflow-hidden">
       
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-max overflow-hidden select-none pointer-events-none z-0">
         <h1 className="bg-text text-center text-[10rem] leading-[0.8] sm:text-[10rem] sm:leading-none md:text-[12rem] lg:text-[18rem] font-bold text-white/[0.05] sm:text-white/[0.03] tracking-tighter">

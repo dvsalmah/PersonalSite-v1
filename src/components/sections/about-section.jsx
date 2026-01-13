@@ -19,7 +19,7 @@ const AboutMe = () => {
   ));
 
   return (
-    <section id="about" className="py-20 md:pt-8 lg:pt-12 bg-[#0F172A] relative transition-colors duration-300 overflow-hidden">
+    <section id="about" className="py-24 bg-[#0F172A] text-slate-100 px-8 md:px-16 lg:px-24">
       <div className="lg:max-w-6xl md:max-w-2xl mx-auto px-6 md:px-5">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-[#F8FAFC]">
           Know More
