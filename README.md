@@ -17,13 +17,11 @@ A modern and responsive personal website showcasing professional portfolio, skil
 - **🛠️ Skills Display** - Visual representation of technical skills and expertise
 - **📧 Contact Form** - Interactive contact form for professional inquiries
 - **⚡ Fast Loading** - Optimized for quick loading times and better user experience
-- **🔍 SEO Friendly** - Structured markup for better search engine visibility
 
 ## 🛠️ Tech Stack
 
 <img src="https://skillicons.dev/icons?i=react,js,tailwind,vercel,git,github" alt="Tech Stack" />
 
-- **Framework**: ![React.js](https://img.shields.io/badge/React.js-000000?style=flat&logo=react&logoColor=white&logoWidth=12)
 - **Language**: ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black&logoWidth=12)
 - **UI Library**: ![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=white&logoWidth=12)
 - **Styling**: ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat&logo=tailwind-css&logoColor=white&logoWidth=12)
