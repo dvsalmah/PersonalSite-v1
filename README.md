@@ -51,4 +51,4 @@ PERSONALSITE-V1/
 **Dealova Nabila**
 - GitHub: [dvsalmah](https://github.com/dvsalmah)
 - LinkedIn: [dealova-ns](https://linkedin.com/in/dealova-ns)
-- Website: [dealovaa-site.vercel.app](https://dealovaa-site.vercel.app)
+- Website: [dealovaa.vercel.app](https://dealovaa-site.vercel.app)
