@@ -10,6 +10,7 @@ import Projects from '@/components/sections/project-section';
 import ProjectDetail from '@/components/sections/project-detail';
 import Contact from '@/components/sections/contact-section';
 import Footer from './components/layout/Footer';
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   const { pathname, hash, key } = useLocation();
@@ -49,6 +50,7 @@ function App() {
         <Route path="/projects/:projectId" element={<ProjectDetail />} />
       </Routes>
       <Footer />
+      <Analytics />
     </div>
   );
 }
