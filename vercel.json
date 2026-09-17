@@ -1,8 +1,8 @@
 {
   "redirects": [
     {
-      "source": "/:path*",
-      "destination": "https://dealovaa.space/:path*",
+      "source": "/",
+      "destination": "https://dealovaa.space/",
       "has": [
         {
           "type": "host",
