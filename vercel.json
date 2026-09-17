@@ -3,6 +3,12 @@
     {
       "source": "/:path*",
       "destination": "https://dealovaa.space/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "dealovaa.vercel.app"
+        }
+      ],
       "permanent": true
     }
   ]
